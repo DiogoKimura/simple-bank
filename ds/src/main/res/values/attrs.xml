@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SimpleBankToolbar">
+        <attr name="button_type">
+            <enum name="avatar" value="0" />
+            <enum name="back" value="1" />
+            <enum name="close" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>

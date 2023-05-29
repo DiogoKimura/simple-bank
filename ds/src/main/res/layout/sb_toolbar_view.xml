@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ds_toolbar_view_shapeable_iv"
+        android:layout_width="@dimen/avatar_height"
+        android:layout_height="@dimen/avatar_width"
+        android:layout_marginStart="@dimen/ds_spacing_m"
+        android:layout_marginVertical="@dimen/ds_spacing_m"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearance="@style/CornerCut"
+        app:strokeColor="#05E200"
+        app:strokeWidth="1dp"
+        tools:src="@drawable/ds_default_avatar" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ds_toolbar_view_iv"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="@dimen/ds_spacing_m"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toBottomOf="@id/ds_toolbar_view_shapeable_iv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ds_toolbar_view_shapeable_iv" />
+</merge>

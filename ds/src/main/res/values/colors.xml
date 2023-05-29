@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  PALLETE  -->
+    <color name="ds_green">#05E200</color>
+    <color name="ds_blue">#807DFF</color>
+    <color name="ds_gray">#D9D9D9</color>
+
+    <!--  GENERAL  -->
+    <color name="ds_primary_color">#000000</color>
+</resources>

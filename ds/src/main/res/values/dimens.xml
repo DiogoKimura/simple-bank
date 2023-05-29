@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="avatar_height">40dp</dimen>
+    <dimen name="avatar_width">40dp</dimen>
+
+    <dimen name="ds_spacing_xxxs">2dp</dimen>
+    <dimen name="ds_spacing_xxs">4dp</dimen>
+    <dimen name="ds_spacing_xs">8dp</dimen>
+    <dimen name="ds_spacing_s">12dp</dimen>
+    <dimen name="ds_spacing_m">16dp</dimen>
+    <dimen name="ds_spacing_l">20dp</dimen>
+    <dimen name="ds_spacing_xl">24dp</dimen>
+    <dimen name="ds_spacing_xxl">32dp</dimen>
+    <dimen name="ds_spacing_xxxl">40dp</dimen>
+</resources>

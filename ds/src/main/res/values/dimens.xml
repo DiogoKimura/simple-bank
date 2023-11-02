@@ -3,6 +3,8 @@
     <dimen name="avatar_height">40dp</dimen>
     <dimen name="avatar_width">40dp</dimen>
 
+    <!--  For spacing, padding, margin purposes  -->
+    <dimen name="ds_spacing_negative_s">-12dp</dimen>
     <dimen name="ds_spacing_xxxs">2dp</dimen>
     <dimen name="ds_spacing_xxs">4dp</dimen>
     <dimen name="ds_spacing_xs">8dp</dimen>
@@ -12,4 +14,21 @@
     <dimen name="ds_spacing_xl">24dp</dimen>
     <dimen name="ds_spacing_xxl">32dp</dimen>
     <dimen name="ds_spacing_xxxl">40dp</dimen>
+
+    <!--  For radius purposes  -->
+    <dimen name="ds_radius_xxs">4dp</dimen>
+    <dimen name="ds_radius_xs">8dp</dimen>
+    <dimen name="ds_radius_s">12dp</dimen>
+    <dimen name="ds_radius_m">16dp</dimen>
+    <dimen name="ds_radius_xl">24dp</dimen>
+    <dimen name="ds_radius_xxl">32dp</dimen>
+    <dimen name="ds_radius_xxxl">48dp</dimen>
+    <dimen name="ds_radius_circle">360dp</dimen>
+
+    <!--  For stroke and width purposes  -->
+    <dimen name="ds_thickness_xxxs">0.2dp</dimen>
+    <dimen name="ds_thickness_xxs">1dp</dimen>
+    <dimen name="ds_thickness_xs">2dp</dimen>
+    <dimen name="ds_thickness_s">4dp</dimen>
+    <dimen name="ds_thickness_m">8dp</dimen>
 </resources>

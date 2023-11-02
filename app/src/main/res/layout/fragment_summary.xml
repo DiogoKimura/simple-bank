@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.example.ds.widget.SimpleBankToolbar
+        android:id="@+id/summary_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:simple_bank_toolbar_button_type="back" />
+
+    <TextView
+        android:id="@+id/summary_total_value_label"
+        style="@style/SimpleBankTheme.TextAppearance.RegularXL"
+        android:layout_marginTop="@dimen/ds_spacing_m"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_value_to_pay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/summary_toolbar" />
+
+    <com.example.ds.widget.Monetary
+        android:id="@+id/summary_monetary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ds_spacing_xxs"
+        app:layout_constraintTop_toBottomOf="@id/summary_total_value_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/summary_payment_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingHorizontal="@dimen/ds_spacing_s"
+        android:background="@drawable/ds_background_green_outline_radius_m"
+        android:layout_margin="@dimen/ds_spacing_l"
+        tools:listitem="@layout/payment_container_item"
+        app:layout_constraintTop_toBottomOf="@id/summary_monetary"
+        app:layout_constraintBottom_toTopOf="@id/summary_tv_make_payment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/summary_iv_add_payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add_big"
+        android:background="@drawable/ds_background_green_fill_radius_xxxl"
+        app:layout_constraintBottom_toBottomOf="@id/summary_tv_make_payment"
+        app:layout_constraintTop_toTopOf="@id/summary_tv_make_payment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/summary_tv_make_payment"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/summary_tv_make_payment"
+        style="@style/SimpleBankTheme.TextAppearance.RegularXL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/ds_spacing_xl"
+        android:background="@drawable/ds_background_green_fill_radius_m"
+        android:paddingHorizontal="@dimen/ds_spacing_xxxl"
+        android:paddingVertical="@dimen/ds_spacing_xxs"
+        android:text="@string/label_make_payment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/summary_iv_add_payment"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

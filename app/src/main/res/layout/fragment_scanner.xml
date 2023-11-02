@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <androidx.camera.view.PreviewView
+        android:id="@+id/preview_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.example.ds.widget.SimpleBankToolbar
+        android:id="@+id/scanner_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:simple_bank_toolbar_transparent_enabled="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/ds_color_primary_transparent_50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/scanner_information"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/scanner_information"
+        style="@style/SimpleBankTheme.TextAppearance.Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/ds_spacing_xs"
+        android:layout_marginBottom="@dimen/ds_spacing_xxs"
+        android:text="@string/payment_scanner_orientation"
+        app:layout_constraintBottom_toTopOf="@id/summary_tv_make_payment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/summary_tv_make_payment"
+        style="@style/SimpleBankTheme.TextAppearance.RegularXL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/ds_spacing_xl"
+        android:background="@drawable/ds_background_green_fill_radius_m"
+        android:paddingHorizontal="@dimen/ds_spacing_xxxl"
+        android:paddingVertical="@dimen/ds_spacing_xxs"
+        android:text="@string/label_input_code"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

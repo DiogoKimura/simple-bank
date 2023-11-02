@@ -7,11 +7,46 @@
     tools:context=".ui.MainActivity">
 
     <com.example.ds.widget.SimpleBankToolbar
+        android:id="@+id/main_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:button_type="avatar"
+        app:simple_bank_toolbar_button_type="avatar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.example.ds.widget.MoneyBox
+        android:id="@+id/main_money_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ds_spacing_xl"
+        android:layout_marginHorizontal="@dimen/ds_spacing_m"
+        app:money_box_label="Seu saldo"
+        app:money_box_amount="10000"
+        app:money_box_masked="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_toolbar" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/main_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginVertical="@dimen/ds_spacing_xl"
+        android:layout_marginHorizontal="@dimen/ds_spacing_m"
+        app:layout_constraintTop_toBottomOf="@id/main_money_box"
+        app:layout_constraintBottom_toTopOf="@id/main_bottom_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.example.ds.widget.BottomView
+        android:id="@+id/main_bottom_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/ds_spacing_m"
+        android:layout_marginBottom="@dimen/ds_spacing_s"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

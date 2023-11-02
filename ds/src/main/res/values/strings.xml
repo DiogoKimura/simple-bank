@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--  MONETARY  -->
+    <string name="ds_value_masked">******</string>
+    <string name="ds_cents_masked">,**</string>
+</resources>

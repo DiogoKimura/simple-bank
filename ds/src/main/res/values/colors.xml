@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--  PALLETE  -->
-    <color name="ds_green">#05E200</color>
-    <color name="ds_blue">#807DFF</color>
-    <color name="ds_gray">#D9D9D9</color>
+    <color name="ds_color_green">#04A800</color>
+    <color name="ds_color_blue">#807DFF</color>
+    <color name="ds_color_gray">#D9D9D9</color>
+    <color name="ds_color_black">#000000</color>
+    <color name="ds_color_white">#FFFFFF</color>
 
     <!--  GENERAL  -->
-    <color name="ds_primary_color">#000000</color>
+    <color name="ds_color_primary">#FFFFFF</color>
+    <color name="ds_color_primary_transparent_50">#7FFFFFFF</color>
+    <color name="ds_color_primary_inverse">#000000</color>
+    <color name="ds_color_primary_inverse_transparent_50">#7F000000</color>
+
+    <color name="ds_color_surface">#FFFFFF</color>
+    <color name="ds_color_surface_gray_transparent">#51636363</color>
+
+    <!--  STATUS  -->
+    <color name="ds_color_status_orange">#BC7100</color>
+    <color name="ds_color_status_green">#00BC13</color>
+    <color name="ds_color_status_red">#BC0000</color>
+    <color name="ds_color_status_gray">#9B9B9B</color>
+
 </resources>

@@ -1,13 +1,14 @@
 package com.example.ds.widget
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
-import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.withStyledAttributes
 import com.example.ds.R
+import com.example.ds.model.ToolbarIconType
 import com.example.sdk.delegates.viewProvider
+import com.example.sdk.extensions.getDrawableRes
+import com.example.sdk.extensions.getEnum
 import com.google.android.material.imageview.ShapeableImageView
 
 class SimpleBankToolbar @JvmOverloads constructor(
@@ -16,33 +17,64 @@ class SimpleBankToolbar @JvmOverloads constructor(
     defStyle: Int = 0
 ) : ConstraintLayout(context, attributeSet, defStyle) {
 
-    private val shapeableImageView by viewProvider<ShapeableImageView>(R.id.ds_toolbar_view_shapeable_iv)
-    private val imageView by viewProvider<ImageView>(R.id.ds_toolbar_view_iv)
+    private val ivButton by viewProvider<ShapeableImageView>(R.id.iv_toolbar_button)
 
     init {
-        inflate(context, R.layout.sb_toolbar_view, this)
+        inflate(context, R.layout.simple_bank_toolbar, this)
         setupView(attributeSet)
     }
 
     private fun setupView(attributeSet: AttributeSet?) {
         attributeSet?.let {
             context.withStyledAttributes(attributeSet, R.styleable.SimpleBankToolbar) {
-                setShapeableImageViewType(getInt(R.styleable.SimpleBankToolbar_button_type, 0))
+                val toolbarIconType: ToolbarIconType =
+                    getEnum(
+                        R.styleable.SimpleBankToolbar_simple_bank_toolbar_button_type,
+                        ToolbarIconType.AVATAR
+                    )
+                setIcon(toolbarIconType)
+                setTransparency(
+                    getBoolean(
+                        R.styleable.SimpleBankToolbar_simple_bank_toolbar_transparent_enabled,
+                        false
+                    )
+                )
             }
         }
     }
 
-    private fun setShapeableImageViewType(type: Int) {
-        if (type == 0) {
-            shapeableImageView.strokeWidth = 2F
-            shapeableImageView.setImageDrawable(context.getDrawable(R.drawable.ds_default_avatar))
-        } else if (type == 1) {
-            shapeableImageView.strokeWidth = 0F
-            shapeableImageView.setImageDrawable(context.getDrawable(R.drawable.ds_arrow_back))
-        } else if (type == 2) {
-            shapeableImageView.strokeWidth = 0F
-            shapeableImageView.setImageDrawable(context.getDrawable(R.drawable.ds_close))
+    private fun setIcon(type: ToolbarIconType) = when (type) {
+        ToolbarIconType.AVATAR -> {
+            ivButton.strokeWidth = 2F
+            ivButton.setImageDrawable(resources.getDrawableRes(R.drawable.ds_icon_default_avatar))
+        }
+
+        ToolbarIconType.BACK -> {
+            ivButton.strokeWidth = 0F
+            ivButton.setImageDrawable(resources.getDrawableRes(R.drawable.ds_icon_arrow_back))
+        }
+
+        ToolbarIconType.CLOSE -> {
+            ivButton.strokeWidth = 0F
+            ivButton.setImageDrawable(resources.getDrawableRes(R.drawable.ds_icon_close))
         }
     }
 
+    private fun setTransparency(enabled: Boolean) {
+        if (enabled) {
+            this.setBackgroundColor(
+                resources.getColor(
+                    R.color.ds_color_primary_transparent_50,
+                    null
+                )
+            )
+        } else {
+            this.setBackgroundColor(
+                resources.getColor(
+                    R.color.ds_color_primary,
+                    null
+                )
+            )
+        }
+    }
 }

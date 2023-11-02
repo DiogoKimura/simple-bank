@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:theme="@style/SimpleBankTheme"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_monetary_currency"
+        style="@style/SimpleBankTheme.TextAppearance.RegularXL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="R$" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_monetary_value"
+        style="@style/SimpleBankTheme.TextAppearance.RegularXXL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/ds_spacing_xxs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/text_view_monetary_currency"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1.000" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_monetary_cents"
+        style="@style/SimpleBankTheme.TextAppearance.RegularM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBaseline_toBaselineOf="@id/text_view_monetary_value"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/text_view_monetary_value"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text=",00" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_monetary_value_masked"
+        style="@style/SimpleBankTheme.TextAppearance.RegularXXL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/ds_spacing_xxs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/text_view_monetary_currency"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/ds_value_masked" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_monetary_cents_masked"
+        style="@style/SimpleBankTheme.TextAppearance.RegularM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBaseline_toBaselineOf="@id/text_view_monetary_value_masked"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/text_view_monetary_value_masked"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/ds_cents_masked" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_monetary_unmasked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="text_view_monetary_cents, text_view_monetary_value"/>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_monetary_masked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="text_view_monetary_cents_masked, text_view_monetary_value_masked"/>
+
+</merge>

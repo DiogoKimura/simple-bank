@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="SimpleBankTheme.TextAppearance">
+        <item name="android:textColor">@color/ds_text_color_primary</item>
+    </style>
+
+    <!--  REGULAR  -->
+    <style name="SimpleBankTheme.TextAppearance.Regular" parent="SimpleBankTheme.TextAppearance">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.RegularXS" parent="SimpleBankTheme.TextAppearance.Regular">
+        <item name="android:textSize">@dimen/ds_text_size_xs</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.RegularS" parent="SimpleBankTheme.TextAppearance.Regular">
+        <item name="android:textSize">@dimen/ds_text_size_s</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.RegularM" parent="SimpleBankTheme.TextAppearance.Regular">
+        <item name="android:textSize">@dimen/ds_text_size_m</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.RegularL" parent="SimpleBankTheme.TextAppearance.Regular">
+        <item name="android:textSize">@dimen/ds_text_size_l</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.RegularXL" parent="SimpleBankTheme.TextAppearance.Regular">
+        <item name="android:textSize">@dimen/ds_text_size_xl</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.RegularXXL" parent="SimpleBankTheme.TextAppearance.Regular">
+        <item name="android:textSize">@dimen/ds_text_size_xxl</item>
+    </style>
+
+    <!--  THIN  -->
+    <style name="SimpleBankTheme.TextAppearance.RegularThin" parent="SimpleBankTheme.TextAppearance">
+        <item name="android:fontFamily">@font/roboto_thin</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.RegularThinXS" parent="SimpleBankTheme.TextAppearance.RegularThin">
+        <item name="android:textSize">@dimen/ds_text_size_xs</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.RegularThinS" parent="SimpleBankTheme.TextAppearance.RegularThin">
+        <item name="android:textSize">@dimen/ds_text_size_s</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.RegularThinM" parent="SimpleBankTheme.TextAppearance.RegularThin">
+        <item name="android:textSize">@dimen/ds_text_size_m</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.RegularThinL" parent="SimpleBankTheme.TextAppearance.RegularThin">
+        <item name="android:textSize">@dimen/ds_text_size_l</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.RegularThinXL" parent="SimpleBankTheme.TextAppearance.RegularThin">
+        <item name="android:textSize">@dimen/ds_text_size_xl</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.RegularThinXXL" parent="SimpleBankTheme.TextAppearance.RegularThin">
+        <item name="android:textSize">@dimen/ds_text_size_xxl</item>
+    </style>
+
+    <!--  LIGHT  -->
+    <style name="SimpleBankTheme.TextAppearance.Light" parent="SimpleBankTheme.TextAppearance">
+        <item name="android:fontFamily">@font/roboto_light</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.LightXS" parent="SimpleBankTheme.TextAppearance.Light">
+        <item name="android:textSize">@dimen/ds_text_size_xs</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.LightS" parent="SimpleBankTheme.TextAppearance.Light">
+        <item name="android:textSize">@dimen/ds_text_size_s</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.LightM" parent="SimpleBankTheme.TextAppearance.Light">
+        <item name="android:textSize">@dimen/ds_text_size_m</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.LightL" parent="SimpleBankTheme.TextAppearance.Light">
+        <item name="android:textSize">@dimen/ds_text_size_l</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.LightXL" parent="SimpleBankTheme.TextAppearance.Light">
+        <item name="android:textSize">@dimen/ds_text_size_xl</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.LightXXL" parent="SimpleBankTheme.TextAppearance.Light">
+        <item name="android:textSize">@dimen/ds_text_size_xxl</item>
+    </style>
+
+    <!--  MEDIUM  -->
+    <style name="SimpleBankTheme.TextAppearance.Medium" parent="SimpleBankTheme.TextAppearance">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.MediumXS" parent="SimpleBankTheme.TextAppearance.Medium">
+        <item name="android:textSize">@dimen/ds_text_size_xs</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.MediumS" parent="SimpleBankTheme.TextAppearance.Medium">
+        <item name="android:textSize">@dimen/ds_text_size_s</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.MediumM" parent="SimpleBankTheme.TextAppearance.Medium">
+        <item name="android:textSize">@dimen/ds_text_size_m</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.MediumL" parent="SimpleBankTheme.TextAppearance.Medium">
+        <item name="android:textSize">@dimen/ds_text_size_l</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.MediumXL" parent="SimpleBankTheme.TextAppearance.Medium">
+        <item name="android:textSize">@dimen/ds_text_size_xl</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.MediumXXL" parent="SimpleBankTheme.TextAppearance.Medium">
+        <item name="android:textSize">@dimen/ds_text_size_xxl</item>
+    </style>
+
+    <!--  BOLD  -->
+    <style name="SimpleBankTheme.TextAppearance.Bold" parent="SimpleBankTheme.TextAppearance">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.BoldXS" parent="SimpleBankTheme.TextAppearance.Bold">
+        <item name="android:textSize">@dimen/ds_text_size_xs</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.BoldS" parent="SimpleBankTheme.TextAppearance.Bold">
+        <item name="android:textSize">@dimen/ds_text_size_s</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.BoldM" parent="SimpleBankTheme.TextAppearance.Bold">
+        <item name="android:textSize">@dimen/ds_text_size_m</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.BoldL" parent="SimpleBankTheme.TextAppearance.Bold">
+        <item name="android:textSize">@dimen/ds_text_size_l</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.BoldXL" parent="SimpleBankTheme.TextAppearance.Bold">
+        <item name="android:textSize">@dimen/ds_text_size_xl</item>
+    </style>
+
+    <style name="SimpleBankTheme.TextAppearance.BoldXXL" parent="SimpleBankTheme.TextAppearance.Bold">
+        <item name="android:textSize">@dimen/ds_text_size_xxl</item>
+    </style>
+
+    <!--  CUSTOM  -->
+    <style name="SimpleBankTheme.TextAppearance.LightS.Link" parent="SimpleBankTheme.TextAppearance.LightS">
+        <item name="android:textColor">@color/ds_color_blue</item>
+        <item name="android:drawableEnd">@drawable/ds_icon_attach_small</item>
+        <item name="android:drawableTint">@color/ds_color_blue</item>
+    </style>
+</resources>

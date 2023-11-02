@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--  GENERAL  -->
-    <color name="ds_primary_color">#FFFFFF</color>
+    <color name="ds_color_primary">#000000</color>
+    <color name="ds_color_primary_transparent_50">#7F000000</color>
+    <color name="ds_color_primary_inverse">#FFFFFF</color>
+    <color name="ds_color_primary_inverse_transparent_50">#7FFFFFFF</color>
+
+    <color name="ds_color_surface">#000000</color>
+
 </resources>

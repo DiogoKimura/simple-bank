@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/ds_spacing_xs"
+    android:id="@+id/transaction_item_view_group"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_transaction_item_date"
+        style="@style/SimpleBankTheme.TextAppearance.Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="12/04/2023" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_transaction_item_label"
+        style="@style/SimpleBankTheme.TextAppearance.Regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ds_spacing_s"
+        app:layout_constraintEnd_toStartOf="@id/tv_transaction_item_value"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_transaction_item_date"
+        tools:text="Auto posto" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_transaction_item_value"
+        style="@style/SimpleBankTheme.TextAppearance.BoldM"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/ds_spacing_s"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toTopOf="@id/tv_transaction_item_info"
+        app:layout_constraintEnd_toStartOf="@id/iv_transaction_item_arrow"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="R$100,00" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_transaction_item_info"
+        style="@style/SimpleBankTheme.TextAppearance.Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ds_spacing_s"
+        android:layout_marginEnd="@dimen/ds_spacing_s"
+        android:drawableStart="@drawable/ds_icon_circle_small"
+        android:drawablePadding="@dimen/ds_spacing_xs"
+        android:drawableTint="@color/ds_color_status_green"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/barrier_root"
+        app:layout_constraintEnd_toStartOf="@id/iv_transaction_item_arrow"
+        app:layout_constraintTop_toBottomOf="@id/tv_transaction_item_value"
+        tools:text="À vencer" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_transaction_item_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ds_icon_arrow_right"
+        app:layout_constraintBottom_toBottomOf="@id/barrier_root"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="tv_transaction_item_label, tv_transaction_item_info" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_transaction_item_expand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="view_transaction_item_expand_background, tv_transaction_item_expand_desc, tv_transaction_item_expand_label, tv_transaction_item_expand_link, tv_transaction_item_expand_title" />
+
+    <View
+        android:id="@+id/view_transaction_item_expand_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/ds_spacing_xxs"
+        android:background="@drawable/ds_background_gray_outline_radius_m"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_transaction_item_expand_title"
+        app:layout_constraintBottom_toBottomOf="@id/tv_transaction_item_expand_link"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_transaction_item_expand_title"
+        style="@style/SimpleBankTheme.TextAppearance.Regular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/ds_spacing_xs"
+        android:layout_marginHorizontal="@dimen/ds_spacing_s"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrier_root"
+        tools:text="Compra realizada ás 16:43" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_transaction_item_expand_desc"
+        style="@style/SimpleBankTheme.TextAppearance.Regular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/ds_spacing_s"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_transaction_item_expand_title"
+        tools:text="Auto post Ipiranga marginal tietê" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_transaction_item_expand_label"
+        style="@style/SimpleBankTheme.TextAppearance.LightS"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/ds_spacing_s"
+        android:layout_marginTop="@dimen/ds_spacing_l"
+        app:layout_constraintEnd_toStartOf="@id/tv_transaction_item_expand_link"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_transaction_item_expand_desc"
+        tools:text="Serviços" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_transaction_item_expand_link"
+        style="@style/SimpleBankTheme.TextAppearance.LightS.Link"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/ds_spacing_s"
+        android:paddingBottom="@dimen/ds_spacing_xs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_transaction_item_expand_label"
+        tools:text="Comprovante" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

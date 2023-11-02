@@ -1,10 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="SimpleBankToolbar">
-        <attr name="button_type">
+        <attr name="simple_bank_toolbar_button_type">
             <enum name="avatar" value="0" />
             <enum name="back" value="1" />
             <enum name="close" value="2" />
         </attr>
+        <attr name="simple_bank_toolbar_transparent_enabled" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="Monetary">
+        <attr name="monetary_amount" format="string" />
+        <attr name="monetary_currency" format="enum">
+            <enum name="BRL" value="0" />
+            <enum name="US" value="1" />
+            <enum name="EUR" value="2" />
+        </attr>
+        <attr name="monetary_masked" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="MoneyBox">
+        <attr name="money_box_label" format="string" />
+        <attr name="money_box_amount" format="string" />
+        <attr name="money_box_currency" format="enum">
+            <enum name="BRL" value="0" />
+            <enum name="US" value="1" />
+            <enum name="EUR" value="2" />
+        </attr>
+        <attr name="money_box_masked" format="boolean" />
     </declare-styleable>
 </resources>

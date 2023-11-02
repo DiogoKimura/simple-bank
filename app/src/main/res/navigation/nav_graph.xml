@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/scanner">
+
+    <fragment
+        android:id="@+id/scanner"
+        android:name="com.example.simplebank.ui.payment.ScannerFragment"
+        tools:layout="@layout/activity_scanner">
+        <action
+            android:id="@+id/action_scanner_to_input"
+            app:destination="@id/input" />
+        <action
+            android:id="@+id/action_scanner_to_summary"
+            app:destination="@id/summary">
+            <argument
+                android:name="summaryItem"
+                app:argType="com.example.simplebank.model.SummaryModel" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/input"
+        android:name="com.example.simplebank.ui.payment.InputFragment"
+        tools:layout="@layout/fragment_input">
+        <action
+            android:id="@+id/action_input_to_summary"
+            app:destination="@id/summary" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/summary"
+        android:name="com.example.simplebank.ui.payment.SummaryFragment"
+        tools:layout="@layout/fragment_summary" >
+        <argument
+            android:name="summaryItem"
+            app:argType="com.example.simplebank.model.SummaryModel" />
+        <action
+            android:id="@+id/action_summary_to_scanner"
+            app:destination="@id/scanner" />
+    </fragment>
+
+</navigation>

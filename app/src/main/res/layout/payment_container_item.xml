@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/payment_container_item_value_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ds_spacing_s"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/payment_container_value_label" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/payment_container_item_value"
+        style="@style/SimpleBankTheme.TextAppearance.Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/ds_spacing_xs"
+        app:layout_constraintStart_toEndOf="@id/payment_container_item_value_label"
+        app:layout_constraintTop_toTopOf="@id/payment_container_item_value_label"
+        tools:text="R$ 300,00" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/payment_container_item_type"
+        style="@style/SimpleBankTheme.TextAppearance.LightS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/payment_container_item_value_label"
+        tools:text="Boleto bancário" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/payment_container_item_beneficiary_label"
+        style="@style/SimpleBankTheme.TextAppearance.Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ds_spacing_xs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/payment_container_item_value_label"
+        tools:text="beneficiário" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/payment_container_item_beneficiary"
+        style="@style/SimpleBankTheme.TextAppearance.Light"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/ds_spacing_l"
+        android:textAlignment="viewEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/payment_container_item_beneficiary_label"
+        app:layout_constraintTop_toTopOf="@id/payment_container_item_beneficiary_label"
+        tools:text="beneficiário" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/payment_container_item_code_label"
+        style="@style/SimpleBankTheme.TextAppearance.Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ds_spacing_xs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/payment_container_item_beneficiary"
+        tools:text="código de barras" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/payment_container_item_code"
+        style="@style/SimpleBankTheme.TextAppearance.Light"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/ds_spacing_l"
+        android:textAlignment="viewEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/payment_container_item_code_label"
+        app:layout_constraintTop_toTopOf="@id/payment_container_item_code_label"
+        tools:text="0321132313223112233012323123323212133212131322133122312032123" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/payment_container_item_due_label"
+        style="@style/SimpleBankTheme.TextAppearance.Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ds_spacing_xs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/payment_container_item_code"
+        tools:text="vencimento" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/payment_container_item_due_date"
+        style="@style/SimpleBankTheme.TextAppearance.Light"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/ds_spacing_l"
+        android:textAlignment="viewEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/payment_container_item_code_label"
+        app:layout_constraintTop_toTopOf="@id/payment_container_item_due_label"
+        tools:text="23/02/2023" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_s"
+        android:layout_marginTop="@dimen/ds_spacing_s"
+        android:background="@color/ds_icon_color_primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/payment_container_item_due_date" />
+
+    <include layout="@layout/payment_container_item_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

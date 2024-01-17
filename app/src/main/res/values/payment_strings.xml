@@ -1,3 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--  SCANNER  -->
+    <string name="payment_scanner_orientation">realize a leitura de um código de barras ou qrcode</string>
+    <string name="payment_scanner_cancelled">leitura cancelada</string>
+
+    <!--  SUMMARY  -->
+    <string name="payment_summary_code_already_inserted">o pagamento com esse código já foi adicionado</string>
+    <string name="payment_summary_delete_payment">deseja deletar esse pagamento?</string>
+    <string name="payment_summary_make_payment">pagamento realizado com sucesso</string>
+    <string name="payment_container_value_label">valor: </string>
+
+    <!--  INPUT  -->
+    <string name="payment_input_code_label">insira o código</string>
+    <string name="payment_input_insert_payment">adicionar pagamento</string>
+    <string name="payment_input_hint">Adicione o código de barras aqui</string>
 </resources>

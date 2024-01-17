@@ -5,11 +5,13 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ds.widget.Monetary
+import com.example.ds.widget.SimpleBankToolbar
 import com.example.sdk.delegates.viewProvider
 import com.example.sdk.extensions.showToastLong
 import com.example.sdk.extensions.toMoney
@@ -25,14 +27,20 @@ class SummaryFragment : Fragment(R.layout.fragment_summary) {
     private val args by navArgs<SummaryFragmentArgs>()
     private val viewModel: SummaryViewModel by viewModel()
 
+    private val toolbar by viewProvider<SimpleBankToolbar>(R.id.summary_toolbar)
     private val tvTotalAmount by viewProvider<Monetary>(R.id.summary_monetary)
     private val rvItemContainer by viewProvider<RecyclerView>(R.id.summary_payment_container)
-    private val tvMakePayment by viewProvider<TextView>(R.id.summary_tv_make_payment)
+    private val tvMakePayment by viewProvider<TextView>(R.id.summary_tv_input_code)
     private val tvAddItem by viewProvider<ImageView>(R.id.summary_iv_add_payment)
     private val summaryAdapter = SummaryAdapter(::onDeleteCallback)
 
     private val startScannerForResult =
-        registerForActivityResult(SimpleScannerContract(::onCancelledCallback), ::onBarcodeCallback)
+        registerForActivityResult(
+            SimpleScannerContract(
+                ::onCancelledCallback,
+                ::onBarcodeInputCallback
+            ), ::onBarcodeCallback
+        )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -67,6 +75,9 @@ class SummaryFragment : Fragment(R.layout.fragment_summary) {
     }
 
     private fun setupButtons() {
+        toolbar.setOnClickListener {
+            findNavController().navigateUp()
+        }
         tvAddItem.setOnClickListener {
             startScannerForResult.launch(0)
         }
@@ -90,6 +101,9 @@ class SummaryFragment : Fragment(R.layout.fragment_summary) {
 
     private fun onCancelledCallback() =
         requireContext().showToastLong(R.string.payment_scanner_cancelled)
+
+    private fun onBarcodeInputCallback() =
+        findNavController().navigate(SummaryFragmentDirections.actionSummaryToInput())
 
     private fun onCannotAddCallback() =
         requireContext().showToastLong(R.string.payment_summary_code_already_inserted)

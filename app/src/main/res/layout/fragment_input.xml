@@ -2,6 +2,62 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/teal_700">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.example.ds.widget.SimpleBankToolbar
+        android:id="@+id/input_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:simple_bank_toolbar_button_type="back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/SimpleBankTheme.TextAppearance.LightM"
+        android:id="@+id/input_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ds_spacing_xl"
+        android:layout_marginStart="@dimen/ds_spacing_l"
+        android:text="@string/payment_input_code_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_toolbar"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/input_paste_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ds_spacing_xl"
+        android:layout_marginEnd="@dimen/ds_spacing_l"
+        android:text="@string/label_paste"
+        android:textColor="@color/ds_color_blue"
+        android:drawablePadding="@dimen/ds_spacing_xxs"
+        android:drawableEnd="@drawable/ic_paste"
+        android:drawableTint="@color/ds_color_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_toolbar"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/input_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/payment_input_hint"
+        android:layout_margin="@dimen/ds_spacing_l"
+        app:layout_constraintTop_toBottomOf="@id/input_paste_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/summary_tv_input_code"
+        style="@style/SimpleBankTheme.TextAppearance.RegularXL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/ds_spacing_xl"
+        android:textAlignment="center"
+        android:background="@drawable/ds_background_green_fill_radius_m"
+        android:text="@string/payment_input_insert_payment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

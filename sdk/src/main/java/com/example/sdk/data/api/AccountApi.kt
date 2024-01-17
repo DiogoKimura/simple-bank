@@ -1,7 +1,11 @@
 package com.example.sdk.data.api
 
-interface AccountApi {
+import com.example.sdk.data.model.TransactionListResponse
+import retrofit2.Call
+import retrofit2.http.GET
 
-    fun getAccountTransactions()
+interface AccountApi {
+    @GET("transactions")
+    fun getAccountTransactions(): Call<TransactionListResponse>
 
 }

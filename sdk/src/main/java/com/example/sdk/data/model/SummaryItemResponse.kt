@@ -1,11 +1,14 @@
 package com.example.sdk.data.model
 
 import com.example.sdk.toolkit.Money
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 class SummaryItemResponse(
-    val amount: Money,
-    val type: SummaryType,
-    val beneficiary: String,
-    val code: String,
-    val dueDate: String
+    @Json(name = "amount") val amount: String,
+    @Json(name = "type") val type: String,
+    @Json(name = "beneficiary") val beneficiary: String,
+    @Json(name = "code") val code: String,
+    @Json(name = "due_date") val dueDate: String?
 )

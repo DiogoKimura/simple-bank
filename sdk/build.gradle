@@ -19,7 +19,14 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            buildConfigField "String", "API_URL", "\"https://my-json-server.typicode.com/diogokimura/simplebankmock/\""
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+            buildConfigField "String", "API_URL", "\"https://my-json-server.typicode.com/diogokimura/simplebankmock/\""
+            debuggable true
         }
     }
     compileOptions {

@@ -18,8 +18,17 @@ class AccountFragment : Fragment(R.layout.fragment_account) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        transactionContainerAdapter = TransactionContainerAdapter(viewModel.getAccountList())
-        transactionContainer.setAdapter(transactionContainerAdapter)
-        transactionContainer.setTitle("Seus gastos")
+        getList()
+        viewModel.getAccountList()
+    }
+
+    private fun getList() {
+        viewModel.accountList.observe(viewLifecycleOwner) {
+            it?.let {
+                transactionContainerAdapter = TransactionContainerAdapter(it)
+                transactionContainer.setAdapter(transactionContainerAdapter)
+                transactionContainer.setTitle("Seus gastos")
+            }
+        }
     }
 }

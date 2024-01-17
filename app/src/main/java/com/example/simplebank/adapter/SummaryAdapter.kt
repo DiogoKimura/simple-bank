@@ -88,7 +88,7 @@ class SummaryViewHolder(
         beneficiary.text = model.beneficiary
         codeLabel.text = model.type.codeLabel
         codeValue.text = model.code
-        dueDate.text = model.dueDate
+        model.dueDate?.let { dueDate.text = it }
 
         containerDeleteButton.setOnClickListener {
             switchDeleteContainer()

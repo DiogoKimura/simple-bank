@@ -8,7 +8,12 @@ import com.example.simplebank.model.SummaryModel
 class ScannerFragment : Fragment() {
 
     private val startScannerForResult =
-        registerForActivityResult(SimpleScannerContract(::onCancelledCallback), ::onBarcodeCallback)
+        registerForActivityResult(
+            SimpleScannerContract(
+                ::onCancelledCallback,
+                ::onBarcodeInputCallback
+            ), ::onBarcodeCallback
+        )
 
     override fun onResume() {
         super.onResume()
@@ -22,5 +27,9 @@ class ScannerFragment : Fragment() {
 
     private fun onCancelledCallback() {
         requireActivity().finish()
+    }
+
+    private fun onBarcodeInputCallback() {
+        findNavController().navigate(ScannerFragmentDirections.actionScannerToInput())
     }
 }

@@ -19,6 +19,7 @@
         android:id="@+id/scanner_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:simple_bank_toolbar_button_type="close"
         app:simple_bank_toolbar_transparent_enabled="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,12 +42,12 @@
         android:paddingTop="@dimen/ds_spacing_xs"
         android:layout_marginBottom="@dimen/ds_spacing_xxs"
         android:text="@string/payment_scanner_orientation"
-        app:layout_constraintBottom_toTopOf="@id/summary_tv_make_payment"
+        app:layout_constraintBottom_toTopOf="@id/summary_tv_input_code"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/summary_tv_make_payment"
+        android:id="@+id/summary_tv_input_code"
         style="@style/SimpleBankTheme.TextAppearance.RegularXL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

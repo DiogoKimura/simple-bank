@@ -1,15 +1,10 @@
 <resources>
     <string name="app_name">SimpleBank</string>
 
+    <!--  GENERAL LABELS  -->
     <string name="label_input_code">digitar o código</string>
     <string name="label_make_payment">realizar pagamento</string>
     <string name="label_value_to_pay">Valor a pagar</string>
-
-    <string name="payment_scanner_orientation">realize a leitura de um código de barras ou qrcode</string>
-    <string name="payment_scanner_cancelled">leitura cancelada</string>
-
-    <string name="payment_summary_code_already_inserted">o pagamento com esse código já foi adicionado</string>
-    <string name="payment_summary_delete_payment">deseja deletar esse pagamento?</string>
-    <string name="payment_summary_make_payment">pagamento realizado com sucesso</string>
-    <string name="payment_container_value_label">valor: </string>
+    <string name="label_copy">copiar</string>
+    <string name="label_paste">colar</string>
 </resources>

@@ -7,7 +7,6 @@ import com.example.ds.widget.BottomView
 import com.example.sdk.delegates.viewProvider
 import com.example.simplebank.R
 import com.example.simplebank.ui.payment.PaymentActivity
-import com.example.simplebank.ui.payment.ScannerActivity
 import com.example.simplebank.ui.product.ProductFragment
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {

@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_summary_to_scanner"
             app:destination="@id/scanner" />
+        <action
+            android:id="@+id/action_summary_to_input"
+            app:destination="@id/input" />
     </fragment>
 
 </navigation>

@@ -7,4 +7,10 @@
     <string name="label_value_to_pay">Valor a pagar</string>
     <string name="label_copy">copiar</string>
     <string name="label_paste">colar</string>
+
+    <!--  TITLES  -->
+    <string name="title_invoice">Suas faturas</string>
+    <string name="title_expend">Seus gastos</string>
+    <string name="title_account">Conta</string>
+    <string name="title_credit">Crédito</string>
 </resources>

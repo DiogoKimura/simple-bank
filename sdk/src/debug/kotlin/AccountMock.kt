@@ -1,5 +1,4 @@
 import com.example.sdk.data.model.TransactionItemResponse
-import com.example.sdk.data.model.TransactionListResponse
 import com.example.sdk.extensions.toMoney
 
 private val transactionItemMock = TransactionItemResponse(
@@ -7,13 +6,13 @@ private val transactionItemMock = TransactionItemResponse(
     subtitle = "Auto posto",
     amount = "100.00".toMoney().formattedTextWithCurrency,
     labelStatus = null,
-    descriptionTittle = "Compra realizada às 16:43",
+    descriptionTitle = "Compra realizada às 16:43",
     descriptionSubtitle = "Auto posto Ipiranga marginal tietê",
     descriptionLabel = "Serviços",
     descriptionReceiptId = "1e211e23123012321"
 )
 
-val transactionListMock = TransactionListResponse(
+val transactionListMock =
     listOf(
         transactionItemMock,
         transactionItemMock,
@@ -27,4 +26,3 @@ val transactionListMock = TransactionListResponse(
         transactionItemMock,
         transactionItemMock
     )
-)

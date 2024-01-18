@@ -27,21 +27,21 @@ class CreditFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupObservers()
-        viewModel.getAccountList()
-    }
-
-    private fun setupObservers() {
-        viewModel.accountList.observe(viewLifecycleOwner) {
+        viewModel.getAccountList().observe(viewLifecycleOwner) {
             it?.let {
                 val tcAdapterInvoice = TransactionContainerAdapter(it)
                 val tcAdapterExpend = TransactionContainerAdapter(it)
-                tcInvoice.setAdapter(tcAdapterInvoice)
-                tcInvoice.setTitle("Suas faturas")
-                tcExpend.setAdapter(tcAdapterExpend)
-                tcExpend.setTitle("Seus gastos")
+                tcInvoice.apply {
+                    setAdapter(tcAdapterInvoice)
+                    setTitle(getString(R.string.title_invoice))
+                    setLoading(false)
+                }
+                tcExpend.apply {
+                    setAdapter(tcAdapterExpend)
+                    setTitle(getString(R.string.title_expend))
+                    setLoading(false)
+                }
             }
         }
     }
-
 }

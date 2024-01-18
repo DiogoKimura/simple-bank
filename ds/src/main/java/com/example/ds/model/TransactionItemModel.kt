@@ -9,10 +9,10 @@ class TransactionItemModel(
     val value: SpannableString,
     val isExpanded: Boolean,
     val canExpand: Boolean,
-    val expandTitle: String,
-    val expandDescription: String,
-    val expandLabel: String,
-    val expandLinkText: String
+    val expandTitle: String?,
+    val expandDescription: String?,
+    val expandLabel: String?,
+    val expandLinkText: String?
 ) {
     constructor(response: TransactionItemResponse): this(
         date = response.title,
@@ -20,7 +20,7 @@ class TransactionItemModel(
         value = SpannableString.valueOf(response.amount),
         isExpanded = false,
         canExpand = true,
-        expandTitle = response.descriptionLabel,
+        expandTitle = response.descriptionTitle,
         expandDescription = response.descriptionSubtitle,
         expandLabel = response.descriptionLabel,
         expandLinkText = response.descriptionReceiptId

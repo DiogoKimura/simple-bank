@@ -2,8 +2,10 @@ package com.example.simplebank.ui.product
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import com.example.ds.adapter.TransactionContainerAdapter
+import com.example.ds.extensions.gone
 import com.example.ds.widget.TransactionContainer
 import com.example.sdk.delegates.viewProvider
 import com.example.simplebank.R
@@ -18,16 +20,14 @@ class AccountFragment : Fragment(R.layout.fragment_account) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        getList()
-        viewModel.getAccountList()
-    }
-
-    private fun getList() {
-        viewModel.accountList.observe(viewLifecycleOwner) {
+        viewModel.getAccountList().observe(viewLifecycleOwner) {
             it?.let {
                 transactionContainerAdapter = TransactionContainerAdapter(it)
-                transactionContainer.setAdapter(transactionContainerAdapter)
-                transactionContainer.setTitle("Seus gastos")
+                transactionContainer.apply {
+                    setAdapter(transactionContainerAdapter)
+                    setTitle(getString(R.string.title_expend))
+                    setLoading(false)
+                }
             }
         }
     }
